@@ -200,7 +200,7 @@ QList<Entry*> Service::searchEntries(Database* db, const QString& hostname)
 {
     QList<Entry*> entries;
     if (Group* rootGroup = db->rootGroup()) {
-        const auto results = EntrySearcher().search(hostname, rootGroup, Qt::CaseInsensitive);
+        const auto results = EntrySearcher().search(hostname, rootGroup);
         for (Entry* entry: results) {
             QString title = entry->title();
             QString url = entry->webUrl();
